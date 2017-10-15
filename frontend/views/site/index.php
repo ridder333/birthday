@@ -1,53 +1,38 @@
 <?php
 
-/* @var $this yii\web\View */
+use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
 
-$this->title = 'My Yii Application';
+$this->title = 'Работа с датами';
 ?>
 <div class="site-index">
-
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
-
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
-        </div>
-
+    <div class="container">
+        <h1>Работа с датами</h1>
+        <h2>Задание</h2>
+        <p>
+            Необходимо написать класс для работы с кастомной датой WDate.<br>
+            Представим такую ситуацию, что нам известно, что какой-то человек был рожден 21 сентября, но какого года, мы не знаем.<br>
+            Соответственно, наш класс может принимать в конструктор строку следующих форматов:
+        </p>
+        <ul>
+            <li>01:00:05 21.07.2017 (известная полная дата со временем)</li>
+            <li>01:05 21.07.2017 (секунды неизвестны)</li>
+            <li>01: 21.07.2017 (неизвестны минуты)</li>
+            <li>21.07.2017 (только дата)</li>
+            <li>07.2017 (известен месяц и год)</li>
+            <li>2017 (известен год)</li>
+            <li>01: (известен час)</li>
+            <li>01:05 (известен час и минуты)</li>
+            <li>01:05:17 (известно полностью время)</li>
+        </ul>
+         <p>
+            Нужно иметь возможность получать дату целиком и по отдельности
+            Также необходимо решить, как будет производиться сравнение двух дат. 
+            И так же написать тест на сортировку выбран 5 дат для сравнения
+            На создание даты, получение ее параметров и сравнение необходимо написать тест (с помощью phpunit или другого пакета).
+            Можно использовать любой фреймворк для структуры. Важно придерживаться стиля кода этого фреймворка и давать понятные имена переменным.
+            Результат залить на git и предоставить доступ
+        </p>
+        <p class="bold">Выберите в верхнем меню необходимый раздел для работы с датами</p>
     </div>
 </div>

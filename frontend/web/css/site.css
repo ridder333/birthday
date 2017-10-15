@@ -118,3 +118,34 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+.site-index{
+    text-align: center;
+}
+
+#check-date-form .form-control, #compare-dates-form .form-control, #sort-dates-form .form-control{
+    width: 200px;
+}
+
+#sort-dates-form textarea{
+    height: 200px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.result-table{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 5px;
+}
+
+.result-table > .row{
+    border-bottom: 1px solid #ccc;
+}
+
+.site-index, .site-test{
+    text-align: left;
+}

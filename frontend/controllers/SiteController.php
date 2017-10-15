@@ -12,6 +12,10 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\models\WDate;
+use frontend\models\CheckDateForm;
+use frontend\models\CompareDatesForm;
+use frontend\models\SortDatesForm;
 
 /**
  * Site controller
@@ -73,6 +77,68 @@ class SiteController extends Controller
     public function actionIndex()
     {
         return $this->render('index');
+    }
+    
+    public function actionCheckDate()
+    {
+        $message = '';
+        $wdate = NULL;
+        $model = new CheckDateForm();
+        
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $wdate = new WDate($model->date);
+            if(!$wdate->checkDate()){
+                $message = 'Дата не соответствует формату!';
+            }
+        }
+        
+        return $this->render('checkdate', [
+            'model' => $model,
+            'wdate' => $wdate,
+            'message' => $message
+        ]);
+    }
+    
+    public function actionCompareDates()
+    {
+        $result = [
+            'message' => '',
+            'wdate1' => NULL,
+            'wdate2' => NULL
+        ];
+        $model = new CompareDatesForm();
+        
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $result = $model->compareDates();
+        }
+        
+        return $this->render('comparedates', [
+            'model' => $model,
+            'result' => $result
+        ]);
+    }
+    
+    public function actionSortDates()
+    {
+        $result = [
+            'message' => '',
+            'dateArr' => NULL,
+            'dateStrArr' => NULL
+        ];
+        $model = new SortDatesForm();
+        
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $result = $model->sortDates();
+        }
+        
+        return $this->render('sortdates', [
+            'model' => $model,
+            'result' => $result
+        ]);
+    }
+    
+    public function actionTest(){
+        return $this->render('test');
     }
 
     /**
