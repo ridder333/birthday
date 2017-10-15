@@ -17,7 +17,7 @@ class CheckDateForm extends Model
 
     public function attributeLabels() {
         return [
-            'date' => 'Äàòà'
+            'date' => 'Ð”Ð°Ñ‚Ð°'
         ];
     }
 }

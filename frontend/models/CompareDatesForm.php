@@ -18,8 +18,8 @@ class CompareDatesForm extends Model
 
     public function attributeLabels() {
         return [
-            'date1' => 'Дата 1',
-            'date2' => 'Дата 2',
+            'date1' => 'Р”Р°С‚Р° 1',
+            'date2' => 'Р”Р°С‚Р° 2',
         ];
     }
     
@@ -29,21 +29,21 @@ class CompareDatesForm extends Model
         $wdate2 = new WDate($this->date2);
         
         if($wdate1->date === NULL){
-            $message .= 'Первая дата не соответствует формату!<br>';
+            $message .= 'РџРµСЂРІР°СЏ РґР°С‚Р° РЅРµ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ С„РѕСЂРјР°С‚Сѓ!<br>';
         }
         if($wdate2->date === NULL){
-            $message .= 'Вторая дата не соответствует формату!<br>';
+            $message .= 'Р’С‚РѕСЂР°СЏ РґР°С‚Р° РЅРµ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓРµС‚ С„РѕСЂРјР°С‚Сѓ!<br>';
         }
         
         if($message == ''){
             if($wdate1->date > $wdate2->date){
-                $message = 'Первая дата больше второй!';
+                $message = 'РџРµСЂРІР°СЏ РґР°С‚Р° Р±РѕР»СЊС€Рµ РІС‚РѕСЂРѕР№!';
             }
             elseif($wdate1->date < $wdate2->date){
-                $message = 'Первая дата меньше второй!';
+                $message = 'РџРµСЂРІР°СЏ РґР°С‚Р° РјРµРЅСЊС€Рµ РІС‚РѕСЂРѕР№!';
             }
             else{
-                $message = 'Первая и вторая даты одинаковые!';
+                $message = 'РџРµСЂРІР°СЏ Рё РІС‚РѕСЂР°СЏ РґР°С‚С‹ РѕРґРёРЅР°РєРѕРІС‹Рµ!';
             }
         }
         

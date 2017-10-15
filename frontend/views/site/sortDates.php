@@ -3,32 +3,32 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
-$this->title = 'Работа с датами';
+$this->title = 'Р Р°Р±РѕС‚Р° СЃ РґР°С‚Р°РјРё';
 ?>
 <div class="site-sort-dates">
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
                 <?php $form = ActiveForm::begin(['id' => 'sort-dates-form']); ?>
-                    <?= $form->field($model, 'dates')->textarea()->label('Введите даты (каждую с новой строки):') ?>
-                    <?= $form->field($model, 'order')->dropDownList([0 => 'по возрастанию', 1 => 'по убыванию'])->label('Выберите тип сортировки:') ?>
+                    <?= $form->field($model, 'dates')->textarea()->label('Р’РІРµРґРёС‚Рµ РґР°С‚С‹ (РєР°Р¶РґСѓСЋ СЃ РЅРѕРІРѕР№ СЃС‚СЂРѕРєРё):') ?>
+                    <?= $form->field($model, 'order')->dropDownList([0 => 'РїРѕ РІРѕР·СЂР°СЃС‚Р°РЅРёСЋ', 1 => 'РїРѕ СѓР±С‹РІР°РЅРёСЋ'])->label('Р’С‹Р±РµСЂРёС‚Рµ С‚РёРї СЃРѕСЂС‚РёСЂРѕРІРєРё:') ?>
                     <div class="form-group">
-                        <?= Html::submitButton('Отсортировать', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                        <?= Html::submitButton('РћС‚СЃРѕСЂС‚РёСЂРѕРІР°С‚СЊ', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
                     </div>
                 <?php ActiveForm::end(); ?>
                 
                 <div id="result">
                     <?php if($result['message'] == '' && count($result['dateStrArr']) > 0 && count($result['dateArr']) > 0) { ?>
-                        <span class="bold">Результат:</span><br>
+                        <span class="bold">Р РµР·СѓР»СЊС‚Р°С‚:</span><br>
                         <div class="result-table">
                             <div class="row">
                                 <div class="col-sm-2"></div>
-                                <div class="col-sm-5">Введенная дата</div>
-                                <div class="col-sm-5">Преобразованная дата</div>
+                                <div class="col-sm-5">Р’РІРµРґРµРЅРЅР°СЏ РґР°С‚Р°</div>
+                                <div class="col-sm-5">РџСЂРµРѕР±СЂР°Р·РѕРІР°РЅРЅР°СЏ РґР°С‚Р°</div>
                             </div>
                             <?php foreach ($result['dateArr'] as $key => $date){ ?>
                                 <div class="row">
-                                    <div class="col-sm-2">Дата <?= ($key + 1) ?></div>
+                                    <div class="col-sm-2">Р”Р°С‚Р° <?= ($key + 1) ?></div>
                                     <div class="col-sm-5"><?= $result['dateStrArr'][$key] ?></div>
                                     <div class="col-sm-5"><?= $date ?></div>
                                 </div>
@@ -36,7 +36,7 @@ $this->title = 'Работа с датами';
                         </div>
                     <?php } ?>
                     <?php if($result['message'] != ''){ ?>
-                        <span class="bold">Результат:</span><br>
+                        <span class="bold">Р РµР·СѓР»СЊС‚Р°С‚:</span><br>
                         <?= $result['message'] ?>
                     <?php } ?>
                 </div>

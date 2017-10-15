@@ -3,32 +3,32 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
-$this->title = 'Работа с датами';
+$this->title = 'Р Р°Р±РѕС‚Р° СЃ РґР°С‚Р°РјРё';
 ?>
 <div class="site-check-date">
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
                 <?php $form = ActiveForm::begin(['id' => 'check-date-form']); ?>
-                    <?= $form->field($model, 'date')->textInput(['maxlength' => 19])->label('Введите дату:') ?>
+                    <?= $form->field($model, 'date')->textInput(['maxlength' => 19])->label('Р’РІРµРґРёС‚Рµ РґР°С‚Сѓ:') ?>
                     <div class="form-group">
-                        <?= Html::submitButton('Проверить', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                        <?= Html::submitButton('РџСЂРѕРІРµСЂРёС‚СЊ', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
                     </div>
                 <?php ActiveForm::end(); ?>
                 
                 <div id="result">
                     <?php if($wdate->date !== NULL) { ?>
-                        <span class="bold">Результат:</span><br>
-                        Полная дата - <?= $wdate->getFullDate() ?><br>
-                        Секунды - <?= $wdate->getSecond() ?><br>
-                        Минуты - <?= $wdate->getMinute() ?><br>
-                        Часы - <?= $wdate->getHour() ?><br>
-                        День - <?= $wdate->getDay() ?><br>
-                        Месяц - <?= $wdate->getMonth() ?><br>
-                        Год - <?= $wdate->getYear() ?>
+                        <span class="bold">Р РµР·СѓР»СЊС‚Р°С‚:</span><br>
+                        РџРѕР»РЅР°СЏ РґР°С‚Р° - <?= $wdate->getFullDate() ?><br>
+                        РЎРµРєСѓРЅРґС‹ - <?= $wdate->getSecond() ?><br>
+                        РњРёРЅСѓС‚С‹ - <?= $wdate->getMinute() ?><br>
+                        Р§Р°СЃС‹ - <?= $wdate->getHour() ?><br>
+                        Р”РµРЅСЊ - <?= $wdate->getDay() ?><br>
+                        РњРµСЃСЏС† - <?= $wdate->getMonth() ?><br>
+                        Р“РѕРґ - <?= $wdate->getYear() ?>
                     <?php } ?>
                     <?php if($message != ''){ ?>
-                        <span class="bold">Результат:</span><br>
+                        <span class="bold">Р РµР·СѓР»СЊС‚Р°С‚:</span><br>
                         <?= $message ?>
                     <?php } ?>
                 </div>
